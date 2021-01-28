@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pants Diseases Detection</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href ="cours.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+  .fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+  </style>
+</head>
+<body>
+
+<!-- <div class="jumbotron text-center" style="margin-bottom:0">
+  <h3>Pants deseases Detection</h3>
+  <p></p> 
+</div> -->
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Mgambi</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Acueil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Memoire</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Deep Learning</a>
+      </li>    
+    </ul>
+  </div>  
+</nav>
+
+<div class="container" style="margin:0%">
+  <div class="row">
+    <div class="col-sm-3">
+      <h5>About Me</h5>
+      <!--<h6>Photo of me:</h6> --><hr>
+      <div class="col"><img class="img-fluid" src="nom.png" alt="Patrick"></div><hr>
+      <div class="col">
+      <ul>
+        <li>U - YDE I</li>
+        <li>Informaticien</li>
+        <li>IA</li>
+        <li>ML</li>
+        <li>DL</li>
+        <li>ET</li>
+        <li>El</li>
+        <li>M</li>
+      </ul>
+      </div><hr>
+     <!-- <div class="col"><img class="img-fluid" src="Tulips.png" alt="Chania"></div> -->
+    </div>
+
+    <div class="col" style="margin top: 0px;">
+     <!-- <h5>Detection Diseases</h5> -->
+ <!--     <h5>Title description, Dec 7, 2017</h5> -->
+      <!-- <div class="col "> -->
+        <!-- <a class="github-fork-ribbon" href="https://url.to-your.repo" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a> -->
+    <!--<h1>Plant Disease Classifier 🍀</h1>
+    <p>Built with ❤️ for Farmers using (Tensorflow, Tensorflow.js, Python, Javascript, HTML5)</p>-->
+    <hr style="margin top: 0px;">
+
+
+
+    <button id="togg1" type="button" class="btn btn-info center">Cliquez ici Prendre une image de la plante ou Cliquez sur la fêche qui est en dessous pour importer une image!</button>
+   <!-- <button id="togg2">Cliquez-moi !</button>-->
+    <div id="d1" class="" style="margin: 0px; height: 10%;">
+    	<h5 class="text-center" style="margin: 0px;">Plants Diseases Détection</h5><hr>
+	    <div id='d6' style='margin: 0px;'class='container-fluid' >
+
+	     <video id="sourcevid" width='240' autoplay="true" style="margin: 0px;" ></video>
+         <canvas id="cvs" style="margin: 0px; display:inline-block;"></canvas>
+	     <div id="message" style="margin: 0px;">message:</div>
+	    </div>
+
+	    <!--<canvas id="cvs" style="margin: 0px; display:inline-block;"></canvas>-->
+
+	   <div class="text-center" class="" style="margin: 0px;">
+	     <button class="btn-sm  btn-info " onclick='ouvrir_camera()' >ouvrir camera</button>
+	     <!--<br>-->
+	     <button class="btn-sm  btn-info " onclick='photo()' >prise de photo</button>
+	     <button id = "uploadImage2" class="btn-sm  btn-info " onclick='sauver()' >sauvegarder</button>
+	     <button class="btn-sm  btn-info " onclick='fermer()' >fermer camera</button>
+	     <!--<button class="btn-sm  btn-info " onclick='prepare_envoi()' >envoyer</button> -->
+	    <div class="">
+	     <button class="btn-sm  btn-info upload-btn-wrapper " style="width: 50%;"><input type="file" name="uploadImage" id="uploadImage1" >Importer et analyser l'image capturée</button>
+	     <button class="btn-sm  btn-default" ><a href="index.html">Revenir à la page d'Acueille</a></button>
+	    </div>
+	     
+	    </div>
+        <!--<p>Ce texte appartient au premier div de ma page</p>
+        <p>Ce deuxième paragraphe également</p>-->
+    </div>
+    <div id="d2">
+    <div class="upload-btn-wrapper">
+        <button class="btn upload-file font-weight-500">
+            <span class="upload-btn">
+                <i class="material-icons d-block font-50 pb-2">cloud_upload</i>
+                <p id="choose-text-1">Choose Image of Crop leaf</p>
+            </span>
+            <span class="upload-select-button" id="blankFile-1">
+                 Format: .png, .jpg, .jpeg, .jfif
+            </span>
+            <span class="success-1">
+                <i class="material-icons text-success">check</i>
+            </span>
+        </button>
+        <input type="file" name="uploadImage" id="uploadImage">
+    </div>
+<!--<textarea id='tar' style='width:50%;height:200px;'></textarea> -->
+    </div>
+
+  <div>
+    <script type="text/javascript">
+
+//function togg(){
+//  if(getComputedStyle(d2).display != "none"){
+//    d2.style.display = "none";
+//  } else {
+//    d2.style.display = "block";
+//  }
+//};
+//togg2.onclick = togg;
+
+
+    </script>
+
+    <!--<p class = "tutorial">😇 Check out how and why this was built <a href="https://medium.com/@rexsimiloluwa/building-a-plant-disease-classification-web-app-in-keras-and-tensorflow-js-d435829213fa" target="blank">HERE</a> → Download test images <a href="https://github.com/rexsimiloluwah/PLANT-DISEASE-CLASSIFIER-WEB-APP-TENSORFLOWJS/tree/master/test-dataset" target="blank">HERE</a> </p> -->
+
+    <div class="row">
+        <div class="box">
+            <img src="" alt="" id="image" width="224" height="224">
+        </div>
+
+        <div class="box box-result">
+            <div class="init_status"></div>
+            <div>
+                <h6>Plant is infected with --> <span class="pred_class"></span></h6>
+                
+            </div>
+            <div class="accuracy">
+                <div class="progress" id="progress">
+                    <div class="inner">
+                      
+                    </div>
+                  </div>
+
+            </div>
+            <p style="padding : 5%;">Accuracy : <b><span class="confidence"></span></b> %</p>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tensorflow/2.0.1/tf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.0.1/progressbar.min.js"></script>
+    <script src="script.js"></script>
+    </div>
+    </div>
+  <!--  <div class="col-sm-3">
+      <h5>Plants Diseases</h5>
+      <h7>Photo of Plants:</h7><hr>
+      <div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+<!--  <div class="mySlides fade">
+    <div class="numbertext">1 / 8</div>
+    <img src="Chrysanthemum.png" style="width:100%">
+    <div class="text">Pant disease</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 8</div>
+    <img src="Tulips.png" style="width:100%">
+    <div class="text">Pant disease</div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="Tulips1.png" style="width:100%">
+    <div class="text">Pant disease</div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 8</div>
+    <img src="Tulips2.png" style="width:100%">
+    <div class="text">Pant disease</div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">5 / 8</div>
+    <img src="Tulips3.png" style="width:100%">
+    <div class="text">Pant disease</div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">6 / 8</div>
+    <img src="Tulips5.png" style="width:100%">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">7 / 8</div>
+    <img src="Chrysanthemum1.png" style="width:100%">
+    <div class="text">Pant disease</div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">8 / 8</div>
+    <img src="Chrysanthemum2.png" style="width:100%">
+    <div class="text">Pant disease</div>
+  </div
+
+  <!-- Next and previous buttons -->
+<!--  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<!--	<div style="text-align:center">
+	  <span class="dot" onclick="currentSlide(1)"></span>
+	  <span class="dot" onclick="currentSlide(2)"></span>
+	  <span class="dot" onclick="currentSlide(3)"></span>
+	</div>
+-->
+<!--<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 4000); // Change image every 2 seconds
+}
+</script>
+      <ul>
+        <li>Potato Early Blight2</li>
+        <li>Potato Early Blight4</li>
+        <li>Tomato Early Blight1</li>
+        <li>Tomato Early Blight5</li>
+        <li>Tomato Healthy2</li>
+        <li>Tomato YellowCurl Virus1</li>
+        <li>Tomato YellowCurl Virus3</li>
+        <li>PotatoHealthy1</li>
+        <li>Etc ...</li>
+        <button type="button" class="btn btn-dark center">Dark</button>
+      </ul>
+      <!--<div class="fakeimg">Fake Image</div>-->
+<!--    </div>
+  </div>
+</div> -->
+<!--<div class="container-fluid"> -->
+
+<!--<div class="jumbotron text-center" style="margin-bottom:0">
+  <p>Footer</p>
+</div>-->
+</div>
+<footer class="bg-light text-center text-lg-start">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2020 Copyright:
+    <a class="text-dark" href="">Mgambi Patrick</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+</body>
+</html>
