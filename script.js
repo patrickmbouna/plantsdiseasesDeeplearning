@@ -79,6 +79,7 @@ function sauver(){
       elem.dispatchEvent(evt);
 
      }
+     return elem;
     }
 
 function prepare_envoi(){
