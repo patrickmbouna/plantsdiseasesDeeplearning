@@ -80,36 +80,7 @@
 
 
 
-    <button id="togg1" type="button" class="btn btn-info center">Cliquez ici Prendre une image de la plante ou Cliquez sur la fêche qui est en dessous pour importer une image!</button>
-   <!-- <button id="togg2">Cliquez-moi !</button>-->
-    <div id="d1" class="container-fluid">
-    	<h5 class="text-center">Plants Diseases Détection</h5><hr>
-	    <div id='d6' style='margin: 0px; display:inline-block'class='container-fluid' >
-
-	     <video id="sourcevid" width='240' autoplay="true"></video>
-         <canvas id="cvs" style="margin: 0px; display:inline-block;"></canvas>
-	     <div id="message" style="margin top: 0px; display:inline-block;">message:</div>
-	    </div>
-
-	    <!--<canvas id="cvs" style="margin: 0px; display:inline-block;"></canvas>-->
-
-	   <div class="text-center" class="container-fluid">
-	     <button class="btn-sm  btn-info " onclick='ouvrir_camera()' >ouvrir camera</button>
-	     <!--<br>-->
-	     <button class="btn-sm  btn-info " onclick='photo()' >prise de photo</button>
-	     <button id = "uploadImage2" class="btn-sm  btn-info " onclick='sauver()' >sauvegarder</button>
-	     <button class="btn-sm  btn-info " onclick='fermer()' >fermer camera</button>
-	     <!--<button class="btn-sm  btn-info " onclick='prepare_envoi()' >envoyer</button> -->
-	    <div class="upload-btn-wrapper">
-	     <button class="btn-sm  btn-info "><input type="file" name="uploadImage" id="uploadImage1" >Importer et analyser l'image capturée</button>
-	    </div>
-      <div class="text-center" class="container-fluid">
-	            <button class="btn-sm  btn-default" style="width: 30%"><a href="index.php">Revenir à la page d'Acueille</a></button>
-      </div>
-	    </div>
-        <!--<p>Ce texte appartient au premier div de ma page</p>
-        <p>Ce deuxième paragraphe également</p>-->
-    </div>
+ 
     <div id="d2">
     <div class="upload-btn-wrapper">
         <button class="btn upload-file font-weight-500">
@@ -127,6 +98,37 @@
         <input type="file" name="uploadImage" id="uploadImage">
     </div>
 <!--<textarea id='tar' style='width:50%;height:200px;'></textarea> -->
+    </div>
+
+     <button id="togg1" type="button" class="btn btn-info center">Cliquez ici Prendre une image de la plante ou Cliquez sur la fêche qui est en dessous pour importer une image!</button>
+   <!-- <button id="togg2">Cliquez-moi !</button>-->
+    <div id="d1" class="container-fluid">
+      <h5 class="text-center">Plants Diseases Détection</h5><hr>
+      <div id='d6' style='margin: 0px; display:inline-block'class='container-fluid' >
+
+       <video id="sourcevid" width='240' autoplay="true"></video>
+         <canvas id="cvs" style="margin: 0px; display:inline-block;"></canvas>
+       <div id="message" style="margin top: 0px; display:inline-block;">message:</div>
+      </div>
+
+      <!--<canvas id="cvs" style="margin: 0px; display:inline-block;"></canvas>-->
+
+     <div class="text-center" class="container-fluid">
+       <button class="btn-sm  btn-info " onclick='ouvrir_camera()' >ouvrir camera</button>
+       <!--<br>-->
+       <button class="btn-sm  btn-info " onclick='photo()' >prise de photo</button>
+       <button id = "uploadImage2" class="btn-sm  btn-info " onclick='sauver()' >sauvegarder</button>
+       <button class="btn-sm  btn-info " onclick='fermer()' >fermer camera</button>
+       <!--<button class="btn-sm  btn-info " onclick='prepare_envoi()' >envoyer</button> -->
+      <div class="upload-btn-wrapper">
+       <button class="btn-sm  btn-info "><input type="file" name="uploadImage" id="uploadImage1" >Importer et analyser l'image capturée</button>
+      </div>
+      <div class="text-center" class="container-fluid">
+              <button class="btn-sm  btn-default" style="width: 30%"><a href="index.php">Revenir à la page d'Acueille</a></button>
+      </div>
+      </div>
+        <!--<p>Ce texte appartient au premier div de ma page</p>
+        <p>Ce deuxième paragraphe également</p>-->
     </div>
 
   <div>
