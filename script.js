@@ -14,9 +14,7 @@ togg1.addEventListener("click", () => {
     d1.style.display = "block";
     d2.style.display = "none";
     togg1.style.display = "none";
-    //window.onload = init();
-
-    
+    //window.onload = init();   
   }
 });
 
@@ -160,7 +158,7 @@ var vivi = document.getElementById('sourcevid');
             strokeWidth: 10,
             duration: 2000, // milliseconds
             easing: 'easeInOut'
-        });
+        });   
 
         async function fetchData(){
             let response = await fetch('./class_indices.json');
@@ -176,9 +174,9 @@ var vivi = document.getElementById('sourcevid');
         // Initialize/Load model
         async function initialize() {
             let status = document.querySelector('.init_status');
-            status.innerHTML = 'Loading Model .... <span class="fa fa-spinner fa-spin"></span>';
+            status.innerHTML = 'Chargement du Modèle .... <span class="fa fa-spinner fa-spin"></span>';
             model = await tf.loadLayersModel('./tensorflowjs-model/model.json');
-            status.innerHTML = 'Model Loaded Successfully  <span class="fa fa-check"></span>';
+            status.innerHTML = 'Modèle chargé avec succès  <span class="fa fa-check"></span>';
         }
 
         async function predict() {
@@ -242,7 +240,7 @@ var vivi = document.getElementById('sourcevid');
                     img.style.display = "block";
                     img.setAttribute('src', this.result);
                 });
-            }
+            } 
 
             else{
             img.setAttribute("src", "");
