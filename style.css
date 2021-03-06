@@ -1,31 +1,3 @@
-
-/*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}*/
-
-/*html,body{
-    width: 95%;
-    margin: 50px auto;
-    background: rgb(158, 209, 179);
-}*/
-
-/* @media (min-width: 768px){
-    html,body{
-        width: 80%;
-        margin: 50px auto;
-    } 
-}*/
-/*h1 {
-    margin: 10px auto;
-    text-transform: uppercase;
-}
-
-h1 span{
-    color: limegreen;
-} */
-
 hr{
     margin: 10px 0px;
 }
