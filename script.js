@@ -200,7 +200,7 @@ var vivi = document.getElementById('sourcevid');
                     console.log(data[class_idx]);
                     console.log(prediction);
 
-                    progressBar.animate(prediction[class_idx]-0.005); // percent
+                    progressBar.animate(prediction[class_idx]-0.005); // percent de Progression
 
                     pconf.style.display = 'block';
 
