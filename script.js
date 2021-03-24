@@ -185,7 +185,7 @@ var vivi = document.getElementById('sourcevid');
 
  
             let offset = tf.scalar(255);
-            let tensorImg =   tf.browser.fromPixels(img).resizeNearestNeighbor([224,224]).toFloat().reverse(2).expandDims();
+            let tensorImg =   tf.browser.fromPixels(img).resizeNearestNeighbor([224,224]).toFloat().sub(meanImageNetRGB).reverse(2).expandDims();
             let tensorImg_scaled = tensorImg.div(offset);
             console.log(tensorImg_scaled);
             
