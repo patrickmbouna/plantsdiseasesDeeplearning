@@ -180,12 +180,12 @@ var vivi = document.getElementById('sourcevid');
         }
 
         async function predict() {
-            // Function for invoking prediction
+            // Function for invoking prediction 
            let img = document.getElementById('image');
 
 
             let offset = tf.scalar(255);
-            let tensorImg =   tf.browser.fromPixels(img).resizeNearestNeighbor([224,224]).toFloat().expandDims();
+            let tensorImg =   tf.browser.fromPixels(img).resizeNearestNeighbor([224,224]).toFloat().reverse(2).expandDims();
             let tensorImg_scaled = tensorImg.div(offset);
             prediction = await model.predict(tensorImg_scaled).data();
            
