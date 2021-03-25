@@ -190,11 +190,29 @@ var vivi = document.getElementById('sourcevid');
             //console.log(tensorImg_scaled);
              
             prediction = await model.predict(tensorImg_scaled).data();
-            console.log(prediction);
+
+				console.log(predictions);
+				let order = Array.from(predict_result)
+					.map(function (p, i) { 
+						return {
+							probability: p,
+							className: Result[i] 
+						};
+					}).sort(function (a, b) {
+						return b.probability - a.probability;
+					}).slice(0, 2);
+			    
+
+			    $("#list").empty();
+	             order.forEach(function (p) {
+		        $("#list").append(`<li>${p.className}: ${parseInt(Math.trunc(p.probability * 100))} %</li>`);
+	              });
 
             fetchData().then((data)=> 
                 {
-                    predicted_class = prediction // tf.argMax(prediction);
+                    predicted_class =  tf.argMin(prediction);
+
+
                      
                     class_idx = Array.from(predicted_class.dataSync())[0];
                     document.querySelector('.pred_class').innerHTML = data[class_idx];
