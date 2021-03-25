@@ -191,10 +191,10 @@ var vivi = document.getElementById('sourcevid');
              
             prediction = await model.predict(tensorImg_scaled).data();
             console.log(prediction);
-            
+
             fetchData().then((data)=> 
                 {
-                    predicted_class = tf.argMax(prediction);
+                    predicted_class = prediction // tf.argMax(prediction);
                      
                     class_idx = Array.from(predicted_class.dataSync())[0];
                     document.querySelector('.pred_class').innerHTML = data[class_idx];
