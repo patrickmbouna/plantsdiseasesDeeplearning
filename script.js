@@ -191,8 +191,8 @@ var vivi = document.getElementById('sourcevid');
              
             prediction = await model.predict(tensorImg_scaled).data();
 
-				console.log(predictions);
-				let order = Array.from(predict_result)
+				console.log(prediction);
+				let order = Array.from(prediction)
 					.map(function (p, i) { 
 						return {
 							probability: p,
