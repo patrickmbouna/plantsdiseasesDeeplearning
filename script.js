@@ -229,7 +229,7 @@ var vivi = document.getElementById('sourcevid');
 
                     pconf.style.display = 'block';
 
-                    confidence.innerHTML = Math.round(prediction[class_idx]*100);
+                    //confidence.innerHTML = Math.round(prediction[class_idx]*100);
   
                 }
             );
