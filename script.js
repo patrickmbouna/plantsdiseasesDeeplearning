@@ -196,7 +196,7 @@ var vivi = document.getElementById('sourcevid');
 					.map(function (p, i) { 
 						return {
 							probability: p,
-							className: Result[i] 
+							//className: Result[i] 
 						};
 					}).sort(function (a, b) {
 						return b.probability - a.probability;
