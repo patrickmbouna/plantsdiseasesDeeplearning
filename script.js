@@ -192,11 +192,15 @@ var vivi = document.getElementById('sourcevid');
             prediction = await model.predict(tensorImg_scaled).data();
 
 				console.log(prediction);
+				const Result = {
+									0: "Fresh",
+									1: "Rotten"
+								};
 				let order = Array.from(prediction)
 					.map(function (p, i) { 
 						return {
 							probability: p,
-							//className: Result[i] 
+							className: Result[i] 
 						};
 					}).sort(function (a, b) {
 						return b.probability - a.probability;
@@ -210,7 +214,7 @@ var vivi = document.getElementById('sourcevid');
 
             fetchData().then((data)=> 
                 {
-                    predicted_class =  tf.argMin(prediction);
+                    predicted_class =  tf.argMax(prediction);
 
 
                      
