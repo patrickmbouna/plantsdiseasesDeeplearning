@@ -182,7 +182,7 @@ var vivi = document.getElementById('sourcevid');
         async function predict() {
             // Function for invoking prediction 
            let img = document.getElementById('image');
-
+ 
  
             let offset = tf.scalar(255);
             let tensorImg =   tf.browser.fromPixels(img).resizeNearestNeighbor([224,224]).toFloat().expandDims();
@@ -191,6 +191,7 @@ var vivi = document.getElementById('sourcevid');
              
             prediction = await model.predict(tensorImg_scaled).data();
            
+           console.log(prediction);
             fetchData().then((data)=> 
                 {
                     predicted_class = tf.argMax(prediction);
