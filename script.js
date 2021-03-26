@@ -192,7 +192,7 @@ var vivi = document.getElementById('sourcevid');
             prediction = await model.predict(tensorImg_scaled).data();
 
 				console.log(prediction);
-				const Result = {
+				let Result = {
 									0: "Fresh",
 									1: "Rotten"
 								};
