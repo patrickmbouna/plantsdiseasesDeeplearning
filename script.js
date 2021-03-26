@@ -196,7 +196,7 @@ var vivi = document.getElementById('sourcevid');
 									0: "Fresh",
 									1: "Rotten"
 								};
-				let order = Array.from(prediction)
+		 	let order = Array.from(prediction)
 					.map(function (p, i) { 
 						return {
 							probability: p,
