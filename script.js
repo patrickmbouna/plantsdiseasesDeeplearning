@@ -184,7 +184,7 @@ var vivi = document.getElementById('sourcevid');
             model = await tf.loadLayersModel('./tensorflowjs-model/model.json');
             status.innerHTML = 'Modèle chargé avec succès  <span class="fa fa-check"></span>';
         }
-		let Result = {
+		const Result = {
 						0: "Confiance",
 						1: "Erreur"
 					};
