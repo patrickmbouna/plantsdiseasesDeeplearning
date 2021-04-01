@@ -210,7 +210,7 @@ var vivi = document.getElementById('sourcevid');
 						};
 					}).sort(function (a, b) {
 						return b.probability - a.probability;
-					}).slice(0, 2);
+					}).slice(0, 5);
 			    
 
 			    $("#list").empty();
