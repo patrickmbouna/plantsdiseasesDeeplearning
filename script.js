@@ -184,7 +184,10 @@ var vivi = document.getElementById('sourcevid');
             model = await tf.loadLayersModel('./tensorflowjs-model/model.json');
             status.innerHTML = 'Modèle chargé avec succès  <span class="fa fa-check"></span>';
         }
-
+		let Result = {
+						0: "Confiance",
+						1: "Erreur"
+					};
         async function predict() {
             // Function for invoking prediction 
            let img = document.getElementById('image');
@@ -199,10 +202,7 @@ var vivi = document.getElementById('sourcevid');
             prediction = await model.predict(tensorImg_scaled).data();
 
 				console.log(prediction);
-			let Result = {
-							0: "Confiance",
-							1: "Erreur"
-						 };
+
 		 	let order = Array.from(prediction)
 					.map(function (p, i) { 
 						return {
