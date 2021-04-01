@@ -173,6 +173,12 @@ var vivi = document.getElementById('sourcevid');
 
         // Initialize/Load model
         async function initialize() {
+        	const http = tf.io.http
+
+				tf.loadLayersModel(http(url)).then((model) => {
+				    console.log('Loaded model.')
+				    console.log(model)
+				})
             let status = document.querySelector('.init_status');
             status.innerHTML = 'Chargement du Modèle .... <span class="fa fa-spinner fa-spin"></span>';
             model = await tf.loadLayersModel('./tensorflowjs-model/model.json');
@@ -184,6 +190,7 @@ var vivi = document.getElementById('sourcevid');
            let img = document.getElementById('image');
  
  
+
             let offset = tf.scalar(255);
             let tensorImg =   tf.browser.fromPixels(img).resizeNearestNeighbor([224,224]).toFloat().expandDims().reverse(-1);
             let tensorImg_scaled = tensorImg.div(offset);
@@ -192,10 +199,10 @@ var vivi = document.getElementById('sourcevid');
             prediction = await model.predict(tensorImg_scaled).data();
 
 				console.log(prediction);
-				let Result = {
-									0: "Fresh",
-									1: "Rotten"
-								};
+			let Result = {
+							0: "Confiance",
+							1: "Erreur"
+						 };
 		 	let order = Array.from(prediction)
 					.map(function (p, i) { 
 						return {
@@ -215,7 +222,7 @@ var vivi = document.getElementById('sourcevid');
             fetchData().then((data)=> 
                 {
                     predicted_class =  tf.argMax(prediction);
-
+ 
 
                      
                     class_idx = Array.from(predicted_class.dataSync())[0];
