@@ -170,16 +170,10 @@ const Result = {
         }
 
          // here the data will be return.
-        
+
 
         // Initialize/Load model
         async function initialize() {
-        	const http = tf.io.http
-
-				tf.loadLayersModel(http(url)).then((model) => {
-				    console.log('Loaded model.')
-				    console.log(model)
-				})
             let status = document.querySelector('.init_status');
             status.innerHTML = 'Chargement du Modèle .... <span class="fa fa-spinner fa-spin"></span>';
             model = await tf.loadLayersModel('./tensorflowjs-model/model.json');
@@ -210,7 +204,7 @@ const Result = {
 						};
 					}).sort(function (a, b) {
 						return b.probability - a.probability;
-					}).slice(0, 5);
+					}).slice(0, 4);
 			    
 
 			    $("#list").empty();
