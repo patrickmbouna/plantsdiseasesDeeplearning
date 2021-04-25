@@ -62,8 +62,6 @@ NB: N'utiliser pas des images qui ne sont pas issus des  14 èspèces que nous a
 
 <h1>Auteurs</h1>
 MBOUNA gildas patrick
-Dr. AMINOU Halidou
-...
 
 <h1>License</h1>
 Distribué sous la licence publique générale GNU.
