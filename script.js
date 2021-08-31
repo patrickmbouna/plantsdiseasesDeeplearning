@@ -143,6 +143,9 @@ let boxResult = document.querySelector('.box-result');
 let confidence = document.querySelector('.confidence');
 let pconf = document.querySelector('.box-result p');
 
+let togg6 = document.getElementById("pred_class");
+let togg7 = document.getElementById("pred_class2");
+
 var canvas1 = document.getElementById("cvs");
           // var elem = document.createElement('a');
 var ctx =canvas1.getContext('2d');
@@ -219,12 +222,24 @@ const Result = {
 
                      
                     class_idx = Array.from(predicted_class.dataSync())[0];
-                    document.querySelector('.pred_class').innerHTML = data[class_idx];
-                    document.querySelector('.inner').innerHTML = `${parseFloat(prediction[class_idx]*100).toFixed(2)}% SURE`;
-                    console.log(data);
-                    console.log(data[class_idx]);
-                    console.log(prediction);
 
+                    if ( "Apple___healthy"==data[class_idx] || "Blueberry___healthy"==data[class_idx] || "Cherry_(including_sour)___healthy"==data[class_idx] || "Corn_(maize)___healthy"==data[class_idx] || "Grape___healthy"==data[class_idx] || "Peach___healthy"==data[class_idx] || "Pepper,_bell___healthy"==data[class_idx] || "Potato___healthy"==data[class_idx] || "Raspberry___healthy"==data[class_idx] || "Soybean___healthy"==data[class_idx] ||  "Strawberry___healthy"==data[class_idx] || "Tomato___healthy"==data[class_idx])
+                       {
+                       	document.querySelector('.pred_class2').innerHTML = data[class_idx];
+                        document.querySelector('.inner').innerHTML = `${parseFloat(prediction[class_idx]*100).toFixed(2)}% SURE`;
+                        console.log(data);
+                        console.log(data[class_idx]);
+                        console.log(prediction);
+                        togg6.style.display = "none";
+  
+                   }else{
+	                    document.querySelector('.pred_class').innerHTML = data[class_idx];
+	                    document.querySelector('.inner').innerHTML = `${parseFloat(prediction[class_idx]*100).toFixed(2)}% SURE`;
+	                    console.log(data);
+	                    console.log(data[class_idx]);
+	                    console.log(prediction);
+	                    togg7.style.display = "none";
+                   }  
                     progressBar.animate(prediction[class_idx]-0.005); // percent de Progression
 
                     pconf.style.display = 'block';
