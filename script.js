@@ -143,8 +143,8 @@ let boxResult = document.querySelector('.box-result');
 let confidence = document.querySelector('.confidence');
 let pconf = document.querySelector('.box-result p');
 
-let togg6 = document.getElementById('pred_class');
-let togg7 = document.getElementById('pred_class2');
+var togg6 = document.getElementById('pred_class');
+var togg7 = document.getElementById('pred_class2');
 
 var canvas1 = document.getElementById("cvs");
           // var elem = document.createElement('a');
@@ -222,6 +222,8 @@ const Result = {
 
                      
                     class_idx = Array.from(predicted_class.dataSync())[0];
+                    var togg6 = document.getElementById('pred_class');
+                    var togg7 = document.getElementById('pred_class2');
 
                     if ( "Apple___healthy"==data[class_idx] || "Blueberry___healthy"==data[class_idx] || "Cherry_(including_sour)___healthy"==data[class_idx] || "Corn_(maize)___healthy"==data[class_idx] || "Grape___healthy"==data[class_idx] || "Peach___healthy"==data[class_idx] || "Pepper,_bell___healthy"==data[class_idx] || "Potato___healthy"==data[class_idx] || "Raspberry___healthy"==data[class_idx] || "Soybean___healthy"==data[class_idx] ||  "Strawberry___healthy"==data[class_idx] || "Tomato___healthy"==data[class_idx])
                        {
