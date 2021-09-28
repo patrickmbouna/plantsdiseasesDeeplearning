@@ -143,8 +143,8 @@ let boxResult = document.querySelector('.box-result');
 let confidence = document.querySelector('.confidence');
 let pconf = document.querySelector('.box-result p');
 
-let togg6 = document.getElementById("pred_class");
-let togg7 = document.getElementById("pred_class2");
+let togg6 = document.getElementById('pred_class');
+let togg7 = document.getElementById('pred_class2');
 
 var canvas1 = document.getElementById("cvs");
           // var elem = document.createElement('a');
