@@ -156,13 +156,13 @@ const Result = {
 				};
 
  
-        let progressBar = 
-            new ProgressBar.Circle('#progress', {
-            color: 'limegreen',
-            strokeWidth: 10,
-            duration: 2000, // milliseconds
-            easing: 'easeInOut'
-        });   
+//        let progressBar = 
+//            new ProgressBar.Circle('#progress', {
+//            color: 'limegreen',
+//            strokeWidth: 10,
+//            duration: 2000, // milliseconds
+//            easing: 'easeInOut'
+//        });   
 
         async function fetchData(){
             let response = await fetch('./class_indices.json');
@@ -233,6 +233,18 @@ const Result = {
                         console.log(data[class_idx]);
                         console.log(prediction);
                         togg6.style.display = "none";
+
+                        let progressBar = 
+                        new ProgressBar.Circle('#progress', {
+                        color: 'red',
+                        strokeWidth: 10,
+                        duration: 2000, // milliseconds
+                        easing: 'easeInOut'
+                                              }); 
+                        progressBar.animate(prediction[class_idx]-0.005); // percent de Progression
+                        pconf.style.display = 'block';
+                        confidence.innerHTML = Math.trunc(prediction[class_idx]*100);
+                        
   
                    }else{
 	                    document.querySelector('.pred_class').innerHTML = data[class_idx];
@@ -241,12 +253,22 @@ const Result = {
 	                    console.log(data[class_idx]);
 	                    console.log(prediction);
 	                    togg7.style.display = "none";
+                        let progressBar = 
+                        new ProgressBar.Circle('#progress', {
+                        color: 'limegreen',
+                        strokeWidth: 10,
+                        duration: 2000, // milliseconds
+                        easing: 'easeInOut'
+                                              }); 
+                        progressBar.animate(prediction[class_idx]-0.005); // percent de Progression
+                        pconf.style.display = 'block';
+                        confidence.innerHTML = Math.trunc(prediction[class_idx]*100);                        
                    }  
-                    progressBar.animate(prediction[class_idx]-0.005); // percent de Progression
+                    //progressBar.animate(prediction[class_idx]-0.005); // percent de Progression
 
-                    pconf.style.display = 'block';
+                    //pconf.style.display = 'block';
 
-                    confidence.innerHTML = Math.trunc(prediction[class_idx]*100);
+                    //confidence.innerHTML = Math.trunc(prediction[class_idx]*100);
   
                 }
             );
